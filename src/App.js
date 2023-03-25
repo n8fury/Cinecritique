@@ -39,6 +39,13 @@ function App() {
 					path="/signup"
 					element={<SignUp />}
 				/>
+
+function App() {
+	return (
+		<div className='App'>
+			<Routes>
+				<Route path='/login' element={<Login />} />
+				<Route path='/signup' element={<SignUp />} />
 			</Routes>
 		</div>
 	);
