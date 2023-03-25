@@ -6,44 +6,31 @@ import Profile from './Components/Dashboard/Profile';
 function App() {
 	const ProtectedRoute = ({ children }) => {
 		const token = localStorage.getItem('token');
-		return token ? children : <Navigate to="/login" />;
+		return token ? children : <Navigate to='/login' />;
 	};
-	return (
-		<div className="App">
-			<Routes>
-				<Route path="/">
-					<Route
-						index
-						element={
-							<ProtectedRoute>
-								<Profile />
-							</ProtectedRoute>
-						}
-					/>
-				</Route>
-				<Route path="/dashboard">
-					<Route
-						index
-						element={
-							<ProtectedRoute>
-								<Profile />
-							</ProtectedRoute>
-						}
-					/>
-				</Route>
-				<Route
-					path="/login"
-					element={<Login />}
-				/>
-				<Route
-					path="/signup"
-					element={<SignUp />}
-				/>
-
-function App() {
 	return (
 		<div className='App'>
 			<Routes>
+				<Route path='/'>
+					<Route
+						index
+						element={
+							<ProtectedRoute>
+								<Profile />
+							</ProtectedRoute>
+						}
+					/>
+				</Route>
+				<Route path='/dashboard'>
+					<Route
+						index
+						element={
+							<ProtectedRoute>
+								<Profile />
+							</ProtectedRoute>
+						}
+					/>
+				</Route>
 				<Route path='/login' element={<Login />} />
 				<Route path='/signup' element={<SignUp />} />
 			</Routes>
