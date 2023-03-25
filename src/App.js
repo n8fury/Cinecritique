@@ -6,12 +6,12 @@ import Profile from './Components/Dashboard/Profile';
 function App() {
 	const ProtectedRoute = ({ children }) => {
 		const token = localStorage.getItem('token');
-		return token ? children : <Navigate to="/login" />;
+		return token ? children : <Navigate to='/login' />;
 	};
 	return (
-		<div className="App">
+		<div className='App'>
 			<Routes>
-				<Route path="/">
+				<Route path='/'>
 					<Route
 						index
 						element={
@@ -21,7 +21,7 @@ function App() {
 						}
 					/>
 				</Route>
-				<Route path="/dashboard">
+				<Route path='/dashboard'>
 					<Route
 						index
 						element={
@@ -31,17 +31,12 @@ function App() {
 						}
 					/>
 				</Route>
-				<Route
-					path="/login"
-					element={<Login />}
-				/>
-				<Route
-					path="/signup"
-					element={<SignUp />}
-				/>
+				<Route path='/login' element={<Login />} />
+				<Route path='/signup' element={<SignUp />} />
 			</Routes>
 		</div>
 	);
 }
 
 export default App;
+
